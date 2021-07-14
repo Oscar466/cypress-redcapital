@@ -1,0 +1,14 @@
+{
+    "registrar":".v-toolbar__items > [href='/registrar'] > .v-btn__content",
+    "nombreApellido":".container > :nth-child(1) > :nth-child(1) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > input",
+    "rut":":nth-child(2) > .dni-field > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > input",
+    "email":":nth-child(3) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > input",
+    "contrasena":":nth-child(4) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > input",
+    "telefono":":nth-child(5) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > input",
+    "tipoOperacion":":nth-child(6) > .v-input > .v-input__control > .v-input__slot > .v-select__slot > .v-select__selections",
+    "selectSolicitar":".v-select-list > .v-list > :nth-child(2) > .v-list__tile > .v-list__tile__content",
+    "selectInvertir":"div.primary--text > .v-list__tile > .v-list__tile__content > .v-list__tile__title",
+    "checkAceptar":".v-input--selection-controls__ripple",
+    "btnIngresar":".align-center > .flex > div[data-v-0f21bdc2=''] > :nth-child(2) > :nth-child(1)",
+    "linkSiyaTienesCuenta":".text-md-left > a"
+}

@@ -1,0 +1,6 @@
+{
+    "registrarBann":".v-toolbar__items > [href='/solicitar']",
+    "invertirBann":".v-toolbar__items > [href='/invertir'] > .v-btn__content",
+    "porqueRedcapitalBann":".v-toolbar__items > :nth-child(3)",
+    "quienesSomos":".text-uppercase >[href='/quienes-somos'] > .v-list__tile__title ml-0 .nav-1000 hidden-sm-and-down"
+}

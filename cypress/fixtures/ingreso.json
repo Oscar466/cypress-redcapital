@@ -1,0 +1,9 @@
+{
+    "logear":"[href='/login'] > .v-btn__content",
+    "nombre":".justify-center > .container > .layout > :nth-child(1) > .dni-field > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > input",
+    "pass":".justify-center > .container > .layout > :nth-child(2) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > input",
+    "entrar":".justify-center > .container > .layout > .text-xs-center",
+    "verPass":".justify-center > .container > .layout > :nth-child(2) > .v-input > .v-input__control > .v-input__slot > .v-input__append-inner > .v-input__icon > .v-icon",
+    "olvidatesContrasenia":":nth-child(1) > .v-btn > .v-btn__content > .font-weight-bold",
+    "registrarLink":":nth-child(2) > .v-btn > .v-btn__content > .font-weight-bold"
+}
