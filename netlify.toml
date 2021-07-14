@@ -1,2 +1,2 @@
-[[pluggins]]
-package = "netlify-plugin-cypresss"
+[[plugins]]
+package = "netlify-plugin-cypress"
