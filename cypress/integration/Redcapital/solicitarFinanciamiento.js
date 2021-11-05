@@ -16,7 +16,7 @@ describe('Testing flujo "solicitar financiamiento"',()=>{
         cy.visit('https://dev-cl.netlify.app/');
          
     })
-   it('Sitio solicitante panel "mi panel->credito garantia-> crear empresa"',()=>{
+   /*it('Sitio solicitante panel "mi panel->credito garantia-> crear empresa"',()=>{
         cy.credencialesLoginSitioSolicitante("173222149","123qwe");
         //presionar crear empresa
         cy.get('.mt-3 > .btn-panel > .v-btn__content').click();
@@ -37,8 +37,9 @@ describe('Testing flujo "solicitar financiamiento"',()=>{
         cy.get('.elevation-3 > :nth-child(2)').click();
         cy.wait(5000);
     })
+    */
     
-  /* it('Sitio solicitante panel "mi panel->credito con garantia->editar"',()=>{
+   it('Sitio solicitante panel "mi panel->credito con garantia->editar"',()=>{
        cy.credencialesLoginSitioSolicitante("173222149","123qwe");
         //seleccionar empresa
         cy.get('.md8 > .v-input > .v-input__control > .v-input__slot > .v-select__slot').click();
@@ -127,6 +128,7 @@ describe('Testing flujo "solicitar financiamiento"',()=>{
     //enviar solicitud
     cy.get('.v-form > .align-center > .flex').click();
    })
+   
    //Es anticipar facturas
    it('Solicitar credito (Factoring)',()=>{
     cy.credencialesLoginSitioSolicitante("173222149","123qwe");
@@ -144,12 +146,12 @@ describe('Testing flujo "solicitar financiamiento"',()=>{
     //digitar contraseña sii
     cy.get(':nth-child(2) > .v-input__control > .v-input__slot > .v-text-field__slot').type('123456');
     cy.wait(5000);
-    //vincular
-    cy.get('.justify-center > .flex > .btn-panel > .v-btn__content').click();
+    //omitir
+    cy.get('.md2 > .btn-panel > .v-btn__content').click();
     cy.wait(5000);
    }) 
 
-  it('Solicitar credito (credito sin garantía)',()=>{
+  /*it('Solicitar credito (credito sin garantía)',()=>{
     cy.credencialesLoginSitioSolicitante("173222149","123qwe");
     //presionar boton solicitar
     cy.get('.btn-solicitar > .v-btn__content').click();
@@ -208,8 +210,8 @@ describe('Testing flujo "solicitar financiamiento"',()=>{
     //actualizar
     cy.get('[style=""] > .v-stepper__wrapper > :nth-child(1) > .md11 > .v-form > :nth-child(4) > .flex').click();
     cy.wait(5000);
-
    })
    */
+
    
 })

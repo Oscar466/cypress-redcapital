@@ -5,7 +5,7 @@ describe('Testeo a Necesito asesoría en sitio de solicitante ',()=>{
     })
     it('Test de seleccion ¿cuanto vende tu empresa al mes ?',()=>{
         //iniciar sesion
-        cy.get('[href="/login"] > .v-btn__content').click();
+        cy.get('[style="text-transform: capitalize; height: auto; padding: 5px 17px; background: rgb(236, 107, 28) !important; font-size: 1rem !important;"] > .v-btn__content').click();
         cy.wait(5000);
         //rut
         cy.get('.justify-center > .container > .layout > :nth-child(1) > .dni-field > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > input').type('173222149');
@@ -17,8 +17,9 @@ describe('Testeo a Necesito asesoría en sitio de solicitante ',()=>{
         cy.get('.justify-center > .container > .layout > .text-xs-center > .btn-panel > .v-btn__content').click();
         cy.wait(5000);
         //click en sitio solicitante
-        cy.get('.btnsitio2 > .v-btn__content > .text-capitalize').click();
-        cy.wait(5000);
+        //cy.get('.btnsitio2 > .v-btn__content > .text-capitalize').click();
+        //cy.wait(5000);
+
         //cerrar ventana emergente
         cy.get('.v-dialog__content--active > .v-dialog > .v-card > .btnclose').click();
         cy.wait(5000);
@@ -38,9 +39,10 @@ describe('Testeo a Necesito asesoría en sitio de solicitante ',()=>{
         cy.get('.md9 > .layout > :nth-child(3) > .v-btn > .v-btn__content').click();
         cy.wait(5000);
     })
+    
     it('Test de seleccion O si prefieres elige tu financiamiento',()=>{
         //iniciar sesion
-        cy.get('[href="/login"] > .v-btn__content').click();
+        cy.get('[style="text-transform: capitalize; height: auto; padding: 5px 17px; background: rgb(236, 107, 28) !important; font-size: 1rem !important;"] > .v-btn__content').click();
         cy.wait(5000);
         //rut
         cy.get('.justify-center > .container > .layout > :nth-child(1) > .dni-field > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > input').type('173222149');
@@ -50,9 +52,6 @@ describe('Testeo a Necesito asesoría en sitio de solicitante ',()=>{
         cy.wait(5000);
         //ingresar
         cy.get('.justify-center > .container > .layout > .text-xs-center > .btn-panel > .v-btn__content').click();
-        cy.wait(5000);
-        //click en sitio solicitante
-        cy.get('.btnsitio2 > .v-btn__content > .text-capitalize').click();
         cy.wait(5000);
         //click para cerrar ventana emergente
         cy.get('.v-dialog__content--active > .v-dialog > .v-card > .btnclose > .v-btn__content').click();
@@ -72,5 +71,7 @@ describe('Testeo a Necesito asesoría en sitio de solicitante ',()=>{
         //enviar
         cy.get(':nth-child(5) > :nth-child(3) > .v-btn > .v-btn__content').click();
         cy.wait(5000);
+
     })
+    
 })

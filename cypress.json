@@ -1,10 +1,13 @@
 {
     "baseUrl":"https://dev-cl.netlify.app/",
     "reporter":"mochawesome",
+    "chromeWebSecurity": false,
     
     "env":{
         "usuario":"173222149",
-        "password":"123qwe"
+        "password":"123qwe",
+        "something":"algo"
     }
+
      
 }

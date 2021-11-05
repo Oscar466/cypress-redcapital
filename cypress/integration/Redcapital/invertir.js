@@ -25,7 +25,7 @@ describe('Testing flujo invertir', () => {
         //presionar boton filtrar
         cy.get(':nth-child(7) > .layout > .flex').click();
         //Presionar boton mas informacion
-        cy.get(':nth-child(1) > .container > .elevation-2 > .btn-go-where-the-endermans-lives > :nth-child(1) > .layout > .flex > .white--text').click();
+        cy.get(':nth-child(1) > .container > .layout.elevation-2 > .btn-go-where-the-endermans-lives > [style="width: 100%;"] > :nth-child(1) > div[data-v-4ce5d84f=""] > .rc-button_scol').click();
         cy.wait(5000);
         //ingresar monto
         cy.get(':nth-child(4) > .layout > :nth-child(1) > :nth-child(1) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > input').clear().type('5000000');
@@ -76,35 +76,35 @@ describe('Testing flujo invertir', () => {
         //se selecciona el enlace revisa las garantias y riesgos   
         cy.get(':nth-child(1) > .layout > :nth-child(2) > .ma-0 > a').click();
         cy.wait(5000);
-        //seleccionar que es redcapital ?
-        cy.get(':nth-child(1) > .v-expansion-panel__header').click();
+        //¿como funciona redcapital para los inversionistas?
+        cy.get(':nth-child(1) > .v-expansion-panel__container > .v-expansion-panel__header').click();
         cy.wait(5000);
-        //seleccionar cuales son las garantias para los inversionistas
-        cy.get(':nth-child(2) > .v-expansion-panel__header').click();
+        //¿cuales son los respaldos para los inversionistas?
+        cy.get(':nth-child(2) > .v-expansion-panel__container > .v-expansion-panel__header').click();
         cy.wait(5000);
-        //seleccionar cuales son los riesgos
-        cy.get(':nth-child(3) > .v-expansion-panel__header').click();
+        //¿cuales son los riesgos?
+        cy.get(':nth-child(3) > .v-expansion-panel__container > .v-expansion-panel__header').click();
         cy.wait(5000);
-        //seleccionar redcapital garantiza las inversiones?
-        cy.get(':nth-child(4) > .v-expansion-panel__header').click();
+        //¿redcapital garantiza las inversiones?
+        cy.get(':nth-child(4) > .v-expansion-panel__container > .v-expansion-panel__header').click();
         cy.wait(5000);
-        //seleccionar garantias y riesgos leasing
-        cy.get(':nth-child(5) > .v-expansion-panel__header').click();
+        //respaldos y riesgos de leasing o leaseback
+        cy.get(':nth-child(5) > .v-expansion-panel__container > .v-expansion-panel__header').click();
         cy.wait(5000);
-        //seleccionar garantias riesgos y cheques
-        cy.get(':nth-child(6) > .v-expansion-panel__header').click();
+        //respaldos y riesgos de cheques
+        cy.get(':nth-child(6) > .v-expansion-panel__container > .v-expansion-panel__header').click();
         cy.wait(5000);
-        //seleccionar garantias y riesgos de confirming
-        cy.get(':nth-child(7) > .v-expansion-panel__header').click();
+        //respaldos y riesgos de confirming
+        cy.get(':nth-child(7) > .v-expansion-panel__container > .v-expansion-panel__header').click();
         cy.wait(5000);
-        //seleccionar garantias y riesgos de facturas
-        cy.get(':nth-child(8) > .v-expansion-panel__header').click();
+        //respaldos y riesgos de facturas
+        cy.get(':nth-child(8) > .v-expansion-panel__container > .v-expansion-panel__header').click();
         cy.wait(5000);
-        //seleccionar garantias y riesgos de creditos sgr
-        cy.get(':nth-child(9) > .v-expansion-panel__header').click();
+        //respaldos y riesgos decreditos con aval sgr 
+        cy.get(':nth-child(9) > .v-expansion-panel__container > .v-expansion-panel__header').click();
         cy.wait(5000);
-        //testear buscador
-        cy.get('.row > :nth-child(2) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot').type('creditos sgr');
+        //respaldo y riesgos creditos
+        cy.get(':nth-child(10) > .v-expansion-panel__container > .v-expansion-panel__header').click();
         cy.wait(5000);
 
     })
@@ -118,15 +118,12 @@ describe('Testing flujo invertir', () => {
         cy.wait(5000);
     })
     
-    it('Testeo a enlace revisa tu perfil de inversión', () => {
+    it.only('Testeo a enlace revisa tu perfil de inversión', () => {
         //Presionar enlace invertir en banner
         cy.get('.v-toolbar__items > [href="/invertir"]').click();
         cy.wait(5000);
         //enlace revisa tu perfil de inversión
         cy.get(':nth-child(3) > .layout > :nth-child(2) > .ma-0 > a').click();
         cy.wait(5000);
-        //boton volver
-        cy.get('.layout.ma-3 > .flex > .v-btn > .v-btn__content').click();
-        cy,wait(5000);
     })
 })

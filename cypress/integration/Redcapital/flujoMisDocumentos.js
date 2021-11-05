@@ -5,7 +5,7 @@ describe('Testeo a Necesito asesoría en sitio de solicitante ',()=>{
     })
     it('Test mis documentos',()=>{
         //iniciar sesion
-        cy.get('[href="/login"] > .v-btn__content').click();
+        cy.get('[style="text-transform: capitalize; height: auto; padding: 5px 17px; background: rgb(236, 107, 28) !important; font-size: 1rem !important;"] > .v-btn__content').click();
         cy.wait(5000);
         //rut
         cy.get('.justify-center > .container > .layout > :nth-child(1) > .dni-field > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > input').type('173222149');
@@ -16,11 +16,8 @@ describe('Testeo a Necesito asesoría en sitio de solicitante ',()=>{
         //ingresar
         cy.get('.justify-center > .container > .layout > .text-xs-center > .btn-panel > .v-btn__content').click();
         cy.wait(5000);
-        //click en sitio solicitante
-        cy.get('.btnsitio2 > .v-btn__content > .text-capitalize').click();
-        cy.wait(5000);
-        //cerrar ventana emergente
-        cy.get('.v-dialog__content--active > .v-dialog > .v-card > .btnclose').click();
+        //click en cerrar ventana emergente
+        cy.get('.v-dialog__content--active > .v-dialog > .v-card > .btnclose > .v-btn__content').click();
         cy.wait(5000);
         //click en mis documentos
         cy.get(':nth-child(8) > .v-list__tile > .v-list__tile__action').click();
@@ -28,8 +25,14 @@ describe('Testeo a Necesito asesoría en sitio de solicitante ',()=>{
         //click en pestaña contratos
         cy.get(':nth-child(1) > .v-tabs__item').click();
         cy.wait(5000);
+        //descargar contrato
+        cy.get('#contracts > .layout > .container > :nth-child(2) > :nth-child(2) > .v-table__overflow > .v-datatable > tbody > :nth-child(1) > .text-xs-left > .v-btn > .v-btn__content > .v-icon').click();
+        cy.wait(5000);
         //click en pestaña mandatos
         cy.get(':nth-child(2) > .v-tabs__item').click();
+        cy.wait(5000);
+        //descargar mandato
+        cy.get('#terms > .layout > .container > :nth-child(2) > :nth-child(2) > .v-table__overflow > .v-datatable > tbody > :nth-child(1) > .text-xs-left > .v-btn > .v-btn__content > .v-icon').click();
         cy.wait(5000);
         //pestaña pagares y respaldo
         cy.get(':nth-child(3) > .v-tabs__item').click();

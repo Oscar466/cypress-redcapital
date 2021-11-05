@@ -1,5 +1,4 @@
-const { createVerify } = require("crypto");
-const { hasUncaughtExceptionCaptureCallback } = require("process");
+
 
 describe('Testeo a opciones del banner ¿por que redcapital?', () => {
     beforeEach(() => {
@@ -8,90 +7,61 @@ describe('Testeo a opciones del banner ¿por que redcapital?', () => {
     })
     it('Testing a quienes somos', () => {
          //quienes somos
-         cy.get('.public-navbar > .v-toolbar > .v-toolbar__content > .v-toolbar__items > .ml-0:nth-child(3)').click();
+         cy.get('.v-toolbar > .v-toolbar__content > .v-toolbar__items > .ml-0:nth-child(7) > .v-btn__content').click();
          cy.wait(5000);
-         cy.get('.v-menu__content:nth-child(2) > .v-list > .text-uppercase:nth-child(1) > .v-list__tile > .v-list__tile__title').click();
+         cy.get('.v-menu__content > .v-list > .text-uppercase >[href="/quienes-somos"]').should('have.prop','href')
+         .then((data)=>{cy.visit(data);});
          cy.wait(5000);
-        /* //click a linkedin g anania
-         cy.get('.flex:nth-child(1) > .elevation-3 > .img__description > .flex > a > .imgCentered').click({ force: true });
+         //click a linkedin g anania
+         cy.get(':nth-child(1) > .rc-about_card > .v-card__title > a').click({ force: true });
          cy.wait(5000);
          //click a linkedin felipe 
-         cy.get('.flex:nth-child(2) > .elevation-3 > .img__description > .flex > a > .imgCentered').click({ force: true });
+         cy.get(':nth-child(2) > .rc-about_card > .v-card__title > a').click({ force: true });
          cy.wait(5000);
          //click a linkedin raul
-         cy.get('.flex:nth-child(3) > .elevation-3 > .img__description > .flex > a > .imgCentered').click({ force: true });
+         cy.get(':nth-child(3) > .rc-about_card > .v-card__title > a').click({ force: true });
          cy.wait(5000);
          //click a likedin anibal pinto
-         cy.get('.flex:nth-child(4) > .elevation-3 > .img__description > .flex > a > .imgCentered').click({ force: true });
+         cy.get(':nth-child(4) > .rc-about_card > .v-card__title > a').click({ force: true });
          cy.wait(5000);
-        */
-     })
+        
+    })
+     
     it('Testear testimonio', () => {
-        const testimonios = cy.get('.v-toolbar > .v-toolbar__content > .v-toolbar__items > .ml-0:nth-child(3) > .v-btn__content');
-        //ingresar a testimonios
-        testimonios.click();
+        cy.get('.v-toolbar > .v-toolbar__content > .v-toolbar__items > .ml-0:nth-child(3) > .v-btn__content').click();
         cy.wait(5000);
-        cy.get('.v-menu__content:nth-child(2) > .v-list > .text-uppercase:nth-child(2) > .v-list__tile > .v-list__tile__title').click();
+        //ingresar a testimonios
+        cy.get('.v-menu__content > .v-list > .text-uppercase:nth-child(2) > [href="/quienes-somos#testimonios"]').should('have.prop','href')
+        .then((data)=>{cy.visit(data);});
         cy.wait(5000);
         //leer hisoria jose antonio otero
-        cy.get(':nth-child(1) > :nth-child(2) > .elevation-3 > .v-card__text > .layout > .hero-card-btn > .ma-0 > .v-btn__content').click();
-        cy.wait(5000);
-        //volver desde jose antonio
-        cy.get('.study-1 > .justify-center > :nth-child(1) > .v-btn > .v-btn__content').click();
-        cy.wait(5000);
-        //volver a leer mensaje desde jose antonio
-        cy.get(':nth-child(1) > :nth-child(2) > .elevation-3 > .v-card__text > .layout > .hero-card-btn > .ma-0 > .v-btn__content').click();
-        cy.wait(5000);
+        cy.get('.pt-5 > :nth-child(1) > .elevation-3 > .v-card__text > .layout > .hero-card-btn > .rc-button_prim > .v-btn__content').click();
+        cy.wait(5000);        
         //solicitar desde jose antonio
-        cy.get(':nth-child(2) > .btn-panel > .v-btn__content').contains('Solicitar').click();
-        //cy.wait(5000);
+        cy.get(':nth-child(3) > .layout > .flex > .btn-panel > .v-btn__content').contains('Solicitar').click();
+        cy.wait(5000);
         //reingresar a testimonios
-        testimonios.click();
-        cy.get('.v-menu__content:nth-child(2) > .v-list > .text-uppercase:nth-child(2) > .v-list__tile > .v-list__tile__title').click({force:true});
+        cy.get('.v-menu__content > .v-list > .text-uppercase:nth-child(2) > [href="/quienes-somos#testimonios"]').should('have.prop','href')
+        .then((data)=>{cy.visit(data);});
         cy.wait(5000);
         //leer testimonio marcela osorio
-        cy.get(':nth-child(1) > :nth-child(3) > .elevation-3 > .v-card__text > .layout > .hero-card-btn > .ma-0 > .v-btn__content').click();
+        cy.get('.pt-5 > :nth-child(2) > .elevation-3 > .v-card__text > .layout > .hero-card-btn > .rc-button_prim > .v-btn__content').click();
         cy.wait(5000);
-        //volver desde marcela osorio
-        cy.get('.study-1 > .justify-center > :nth-child(1) > .v-btn > .v-btn__content').click();
-        cy.wait(5000);
-        //volver a leer historia marcela osorio
-        cy.get(':nth-child(1) > :nth-child(3) > .elevation-3 > .v-card__text > .layout > .hero-card-btn > .ma-0 > .v-btn__content').click();
         //solicitar desde marcela osorio
-        cy.get('.study-1 > .layout > .flex > .btn-panel > .v-btn__content').click({multiple:true});
+        cy.get(':nth-child(3) > .layout > .flex > .btn-panel > .v-btn__content').click();
         cy.wait(5000);
-
-    })
-    
-    it('Testing a ver noticias', () => {
-        const testimonios = cy.get('.v-toolbar > .v-toolbar__content > .v-toolbar__items > .ml-0:nth-child(3) > .v-btn__content');
-        //ingresar a noticias
-        testimonios.click();
-        cy.get('.v-menu__content:nth-child(2) > .v-list > .text-uppercase:nth-child(2) > .v-list__tile > .v-list__tile__title').click();
-        cy.wait(5000);
-       /* //ver noticia soytv
-        cy.get('.en-prensa > :nth-child(2) > .elevation-3 > .v-card__text > .layout > .hero-card-btn > .ma-0').click();
-        cy.wait(5000);
-        //ver noticia diario estrategia
-        cy.get('.en-prensa > :nth-child(3) > .elevation-3 > .v-card__text > .layout > .hero-card-btn > .ma-0').click();
-        cy.wait(5000);
-        //noticia df.cl
-        cy.get(':nth-child(4) > .elevation-3 > .v-card__text > .layout > .hero-card-btn > .ma-0 > .v-btn__content').click();
-        cy.wait(5000);
-        //ver mas 
-        cy.get('.en-prensa > .pb-5 > .ma-0 > .v-btn__content').click();
-        cy.wait(5000);
-        */
+        
     })
     
     it('Testing a prensa', () => {
-        //click a la pestaña por que redcapital? ubicada en el banner
-        cy.get('.v-toolbar > .v-toolbar__content > .v-toolbar__items > .ml-0:nth-child(3) > .v-btn__content').click();
+        //click a la pestaña Nosotros
+        cy.get(':nth-child(7) > .v-btn__content').click();
         cy.wait(5000);
         //click a "prensa"
-        cy.get('.v-menu__content:nth-child(2) > .v-list > .text-uppercase:nth-child(3) > .v-list__tile > .v-list__tile__title').click({force:true});
+        cy.get('.v-menu__content > .v-list > .text-uppercase:nth-child(3) > [href="/prensa"]').should('have.prop','href')
+        .then((data)=>{cy.visit(data);});
         cy.wait(5000);
-        /*//click a enlace SOYTV
+        //click a enlace SOYTV
         cy.get(':nth-child(1) > .container > .layout > .btn-go-where-the-endermans-lives > .flex > .text-capitalize > .v-btn__content').click();
         cy.wait(5000);
         //click a diarioEstrategia
@@ -184,7 +154,6 @@ describe('Testeo a opciones del banner ¿por que redcapital?', () => {
         //click DF.cl "la ayuda para las pyme no es suficiente"
         cy.get(':nth-child(32) > .container > .layout > .btn-go-where-the-endermans-lives > .flex > .text-capitalize > .v-btn__content').click();
         cy.wait(5000);
-        */
     })
 
 
