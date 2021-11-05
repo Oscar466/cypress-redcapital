@@ -33,7 +33,7 @@ describe('Register test case', function(){
             cy.get(':nth-child(4) > .dni-field > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > input').type('53671349');
             //Correo
             cy.get(':nth-child(5) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > input').type('josefa@linuxero.cl');
-            //Contraseña
+            //Contraseñasssdd
             cy.get(':nth-child(6) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > input').type('prueba123');
             cy.wait(5000);
             //Repetir Contraseñassssss
