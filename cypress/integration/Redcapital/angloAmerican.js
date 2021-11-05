@@ -25,7 +25,7 @@ describe('Register test case', function(){
         await EliminacionDeUsuarioTest().then(() => {
 
             /**REGISTRO**/
-            //Nombresss
+            //Nombres
             cy.get('.justify-center > :nth-child(2) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > input').type('Josefa');
             //Apellido
             cy.get(':nth-child(3) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > input').type('Herrera');
