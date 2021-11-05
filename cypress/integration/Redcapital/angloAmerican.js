@@ -36,7 +36,7 @@ describe('Register test case', function(){
             //Contraseña
             cy.get(':nth-child(6) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > input').type('prueba123');
             cy.wait(5000);
-            //Repetir Contraseña
+            //Repetir Contraseñas
             cy.get(':nth-child(7) > .v-input > .v-input__control > .v-input__slot > .v-text-field__slot > input').type('prueba123');
             cy.wait(5000);
             //Termino y condiciones
